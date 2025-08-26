@@ -5,7 +5,7 @@ import tagger from "@dhiwise/component-tagger";
 
 export default defineConfig({
   build: {
-    outDir: "dist", // ✅ Keep this as "dist" for Vercel
+    outDir: "dist", 
     chunkSizeWarningLimit: 2000,
   },
   plugins: [
