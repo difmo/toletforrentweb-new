@@ -128,7 +128,7 @@ const AIRecommendations = ({ recommendations, onDismiss, onFeedback }) => {
                     )}
                   </div>
 
-                  {/* Feedbac xjsncjk */}
+                  {/* Feedbac  */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="text-xs text-text-secondary">Helpful?</span>
