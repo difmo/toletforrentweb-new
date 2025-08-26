@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Button from './Button';
 import Icon from '../AppIcon';
-
+import logo from'../../../public/assets/images/logo.svg';
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -30,43 +30,14 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/homepage" className="flex items-center space-x-3 smooth-transition hover:opacity-80">
+            <Link to="/" className="flex items-center space-x-3 smooth-transition hover:opacity-80">
               <div className="relative">
-                <div className="w-10 h-10 brand-gradient rounded-lg flex items-center justify-center">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="text-white"
-                  >
-                    <path
-                      d="M12 2L2 7L12 12L22 7L12 2Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2 17L12 22L22 17"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2 12L12 17L22 12"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+                 <img src={logo} alt="" />
                 </div>
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-xl font-brand-bold text-text-primary">ToletTorrent</h1>
+                <h1 className="text-xl font-brand-bold text-text-primary">TO-LET-FOR-RENT</h1>
                 <p className="text-xs text-text-secondary -mt-1">Rent with Confidence</p>
               </div>
             </Link>

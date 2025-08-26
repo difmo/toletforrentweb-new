@@ -9,6 +9,7 @@ import CommunityHubLocalInsights from './pages/community-hub-local-insights';
 import AdvancedSearchDiscovery from './pages/advanced-search-discovery';
 import PropertyDetailExperience from './pages/property-detail-experience';
 import Homepage from './pages/homepage';
+import PrivacyPolicy from "pages/privacypolicy/PrivacyPolicy";
 
 const Routes = () => {
   return (
@@ -17,14 +18,15 @@ const Routes = () => {
       <ScrollToTop />
       <RouterRoutes>
         {/* Define your route here */}
-        <Route path="/" element={<AdvancedSearchDiscovery />} />
+        {/* <Route path="/" element={<AdvancedSearchDiscovery />} /> */}
         <Route path="/owner-dashboard-suite" element={<OwnerDashboardSuite />} />
         <Route path="/user-profile-verification-center" element={<UserProfileVerificationCenter />} />
         <Route path="/community-hub-local-insights" element={<CommunityHubLocalInsights />} />
         <Route path="/advanced-search-discovery" element={<AdvancedSearchDiscovery />} />
         <Route path="/property-detail-experience" element={<PropertyDetailExperience />} />
-        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
       </RouterRoutes>
       </ErrorBoundary>
     </BrowserRouter>
