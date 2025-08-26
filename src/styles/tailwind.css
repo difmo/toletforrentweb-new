@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #FAFAFA; /* gray-50 */
+    --color-foreground: #111827; /* gray-900 */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #111827; /* gray-900 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #111827; /* gray-900 */
+    --color-muted: #F3F4F6; /* gray-100 */
+    --color-muted-foreground: #6B7280; /* gray-500 */
+    
+    /* Border and Input Colors */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #2563EB; /* blue-600 */
+    
+    /* Brand Colors */
+    --color-primary: #1E40AF; /* blue-800 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #0F766E; /* teal-700 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    --color-accent: #EA580C; /* orange-600 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* State Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Brand Gradient Colors */
+    --color-brand-gradient-start: #2563EB; /* blue-600 */
+    --color-brand-gradient-middle: #0891B2; /* cyan-600 */
+    --color-brand-gradient-end: #059669; /* emerald-600 */
+    
+    /* Text Colors */
+    --color-text-primary: #111827; /* gray-900 */
+    --color-text-secondary: #6B7280; /* gray-500 */
+    --color-text-muted: #9CA3AF; /* gray-400 */
+    
+    /* Surface Colors */
+    --color-surface: #FFFFFF; /* white */
+    --color-surface-secondary: #F9FAFB; /* gray-50 */
+    --color-surface-tertiary: #F3F4F6; /* gray-100 */
+    
+    /* Shadow Colors */
+    --shadow-brand: 0 4px 20px rgba(37, 99, 235, 0.1);
+    --shadow-elevation: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-overlay: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter;
+  }
+  
+  .font-accent {
+    font-family: 'Crimson Pro', serif;
+  }
+}
+
+@layer components {
+  .brand-gradient {
+    background: linear-gradient(135deg, var(--color-brand-gradient-start) 0%, var(--color-brand-gradient-middle) 50%, var(--color-brand-gradient-end) 100%);
+  }
+  
+  .brand-gradient-text {
+    background: linear-gradient(135deg, var(--color-brand-gradient-start) 0%, var(--color-brand-gradient-middle) 50%, var(--color-brand-gradient-end) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .flowing-border {
+    border-radius: 12px;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+  }
+  
+  .brand-shadow {
+    box-shadow: var(--shadow-brand);
+  }
+  
+  .elevation-shadow {
+    box-shadow: var(--shadow-elevation);
+  }
+  
+  .overlay-shadow {
+    box-shadow: var(--shadow-overlay);
+  }
+  
+  .smooth-transition {
+    transition: all 0.3s ease-out;
+  }
+  
+  .micro-transition {
+    transition: all 0.2s ease-out;
+  }
+  
+  .content-transition {
+    transition: all 0.8s ease-out;
+  }
+  
+  .floating-animation {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .ripple-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ripple-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  .ripple-effect:active::after {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
